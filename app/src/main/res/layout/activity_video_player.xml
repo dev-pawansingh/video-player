@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_main"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.VideoPlayerActivity">
+
+    <!-- Gesture Container for Zoom -->
+    <FrameLayout
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:fitsSystemWindows="false"
+        android:background="#000000"
+        android:layout_height="match_parent">
+
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/exoplayer_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            app:hide_on_touch="false"
+            android:fitsSystemWindows="false"
+            app:resize_mode="fit"
+            app:show_timeout="4000"
+
+            app:auto_show="false"
+
+            app:surface_type="surface_view"
+            app:player_layout_id="@layout/exo_layout_view"
+            app:rewind_increment="10000"
+            app:show_buffering="when_playing"
+            app:buffered_color="@color/purple_200"
+            app:fastforward_increment="10000"
+            app:shutter_background_color="#000000"
+            app:controller_layout_id="@layout/custom_playback_view" />
+    </FrameLayout>
+    <RelativeLayout
+        android:id="@+id/controls_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:background="@android:color/transparent">
+
+        <View
+            android:id="@+id/night_mode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_dark_color"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/eqFrame"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

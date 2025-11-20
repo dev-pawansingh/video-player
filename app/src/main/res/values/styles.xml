@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <style name="Theme.VideoPlayer" parent="Theme.Material3.Dark.NoActionBar">-->
+<!--        <item name="colorPrimary">#FF3B30</item>-->
+<!--        <item name="colorPrimaryVariant">#C62828</item>-->
+<!--        <item name="colorOnPrimary">#FFFFFF</item>-->
+<!--        <item name="colorSurface">#121212</item>-->
+<!--        <item name="colorOnSurface">#FFFFFF</item>-->
+<!--        <item name="backgroundColor">#121212</item>-->
+<!--    </style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+</resources>

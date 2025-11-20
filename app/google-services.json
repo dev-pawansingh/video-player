@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "490505909911",
+    "project_id": "video-player-vp",
+    "storage_bucket": "video-player-vp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490505909911:android:d9027bb6a4e378d5239bd2",
+        "android_client_info": {
+          "package_name": "com.pawansingh.vp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF3J9gQt7ar3g4-eB_iIteP-Wyl6jajYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

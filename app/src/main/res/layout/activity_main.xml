@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8FAFF"
+    tools:context=".activities.MainActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="#FFFFFF"
+        app:title="@string/app_name"
+        app:titleTextColor="#000000"
+        app:navigationIconTint="#000000"
+        app:iconTint="#000000"
+        app:elevation="2dp"
+        android:outlineProvider="none"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/toolbar"
+        android:background="#FFFFFF"
+        app:tabGravity="fill"
+        app:tabMode="fixed"
+        app:tabTextColor="#636E72"
+        app:tabSelectedTextColor="#0984E3"
+        app:tabIndicatorColor="#0984E3"
+        app:tabIndicatorHeight="3dp"
+        app:tabRippleColor="#E3F2FD"
+        app:tabPaddingStart="16dp"
+        app:tabPaddingEnd="16dp"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tabLayout"
+        android:background="#E0E6ED" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/view"
+        android:background="#F8FAFF" />
+
+</RelativeLayout>

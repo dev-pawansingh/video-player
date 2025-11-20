@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Video Player</string>
+    <string name="text1">Thank you for installing our Video Player App</string>
+    <string name="text_2">For playing videos in this app, you need to allow for accessing all the videos in this Device.Click Allow Access and we are ready to go.</string>
+    <string name="allow_access">Allow Access</string>
+    <string name="App_id">ca-app-pub-3250916316632763~9866416923</string>
+    <string name="BannerAd1">ca-app-pub-3250916316632763/3403082368</string>
+    <string name="BannerAd2">ca-app-pub-3250916316632763/7809231231</string>
+    <string name="AddTestId">ca-app-pub-3940256099942544/9214589741</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
