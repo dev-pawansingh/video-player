@@ -10,10 +10,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.pawansingh.vp.models.MediaFiles;
 import com.pawansingh.vp.R;
 import com.pawansingh.vp.activities.VideoFilesActivity;
+import com.pawansingh.vp.models.MediaFiles;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class VideoFoldersAdapter extends RecyclerView.Adapter<VideoFoldersAdapter.ViewHolder> {
@@ -71,9 +72,13 @@ public class VideoFoldersAdapter extends RecyclerView.Adapter<VideoFoldersAdapte
     }
     int noOfFolders(String folder_name) {
         int files_no = 0;
-        for (MediaFiles mediaFiles : mediaFiles) {
-            if (mediaFiles.getPath().substring(0, mediaFiles.getPath().lastIndexOf("/"))
-                    .endsWith(folder_name)) {
+        for (MediaFiles mf : mediaFiles) {
+            if (mf == null) continue;
+            String path = mf.getPath(); // use getter (Kotlin -> Java)
+            if (path == null || path.isEmpty()) continue;
+            File f = new File(path);
+            String parent = f.getParent(); // safer than substring
+            if (parent != null && parent.endsWith(folder_name)) {
                 files_no++;
             }
         }

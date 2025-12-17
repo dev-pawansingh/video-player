@@ -60,16 +60,10 @@ private SeekBar seekBar;
                     startActivityForResult(intent,0);
                 }
             }
-
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
+            public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
         cross.setOnClickListener(new View.OnClickListener() {
             @Override

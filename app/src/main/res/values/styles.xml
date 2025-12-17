@@ -15,4 +15,8 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
     </style>
 
+<!--    <style name="BottomNav_TextSmall" parent="TextAppearance.MaterialComponents.Caption">-->
+<!--        <item name="android:textSize">10sp</item>-->
+<!--    </style>-->
+
 </resources>

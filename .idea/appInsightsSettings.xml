@@ -23,9 +23,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.pawansingh.vp" />
-                  <option name="mobileSdkAppId" value="1:490505909911:android:d9027bb6a4e378d5239bd2" />
-                  <option name="projectId" value="video-player-vp" />
-                  <option name="projectNumber" value="490505909911" />
+                  <option name="mobileSdkAppId" value="1:942551572102:android:9887d7f662f1c93d667b07" />
+                  <option name="projectId" value="videoplayer-e539a" />
+                  <option name="projectNumber" value="942551572102" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

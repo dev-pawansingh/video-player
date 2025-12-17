@@ -24,4 +24,11 @@
     <color name="gray_600">#757575</color>
     <color name="card_stroke">#1F000000</color>
 
+    <color name="abb_bg">#FFFFFF</color>
+    <color name="abb_indicator">#1A78F2</color>
+    <color name="abb_selected">#1A78F2</color>
+    <color name="abb_unselected">#808080</color>
+    <color name="abb_ripple">#331A78F2</color>
+
+
 </resources>

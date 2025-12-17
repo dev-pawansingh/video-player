@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".update.HubActivity">
+
+    <FrameLayout
+        android:layout_alignParentTop="true"
+        android:layout_above="@id/separator"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/separator"
+        android:layout_above="@id/bottomNav"
+        android:background="@color/gray_600"/>
+
+    <com.ismaeldivita.chipnavigation.ChipNavigationBar
+        android:layout_above="@id/separator2"
+        android:background="@color/white"
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:cnb_menuResource="@menu/bottom_nav_menu"
+        app:cnb_orientationMode="horizontal"
+        app:cnb_addBottomInset="false"
+        app:cnb_addLeftInset="false"
+        app:cnb_addRightInset="false"
+        app:cnb_addTopInset="false"
+        app:cnb_unselectedColor="@color/abb_unselected"
+        app:cnb_badgeColor="@color/abb_selected"
+        app:cnb_radius="15dp"
+        app:cnb_iconSize="24dp"
+        app:cnb_animationDuration="175"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="1dp"
+        android:id="@+id/separator2"
+        android:background="@color/gray_600"/>
+
+</RelativeLayout>

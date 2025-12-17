@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent">
+
+    <!-- Video Surface -->
+    <FrameLayout
+        android:id="@+id/playerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
+    <!-- Right side icons (above bottom content) -->
+    <LinearLayout
+        android:layout_above="@+id/bottomContent"
+        android:id="@+id/rightActions"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:layout_gravity="end|center_vertical"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btnLike"
+            android:src="@drawable/ic_like"
+            app:tint="#FFFFFF"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:id="@+id/tvLikes"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:text="2k"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/btnComment"
+            android:src="@drawable/ic_comment"
+            app:tint="#FFFFFF"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:id="@+id/tvComments"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:text="500"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/btnShare"
+            android:src="@drawable/ic_share"
+            app:tint="#FFFFFF"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <TextView
+            android:id="@+id/tvShares"
+            android:textColor="#FFFFFF"
+            android:text="200"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <!-- Bottom content -->
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottomContent"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="8dp"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/uploader_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/vpicon"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvUploader"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:text="By: Pawan Singh"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:textColor="#FFFFFF"
+                    android:textSize="17sp"
+                    android:text="How to stay Motivated and Happy?"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_view"/>
+
+            <TextView
+                android:layout_marginStart="5dp"
+                android:id="@+id/tvViews"
+                android:textColor="#CCCCCC"
+                android:textSize="13sp"
+                android:text="14k views"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

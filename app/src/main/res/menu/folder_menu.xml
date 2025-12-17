@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+<!--    <item android:id="@+id/refresh_folders"-->
+<!--        android:title="Language"-->
+<!--        android:icon="@drawable/baseline_language_24"-->
+<!--        app:showAsAction="always"/>-->
     <item android:id="@+id/rateUs"
         android:title="Rate us"
         android:icon="@drawable/rate_us"
-        app:showAsAction="always"/>
-    <item android:id="@+id/refresh_folders"
-        android:title="Refresh"
-        android:icon="@drawable/ic_refresh"
         app:showAsAction="always"/>
     <item android:id="@+id/share_app"
         android:icon="@drawable/ic_share"

@@ -7,6 +7,7 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.pawansingh.vp.R;
+import com.pawansingh.vp.update.HubActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
+                startActivity(new Intent(SplashScreenActivity.this, HubActivity.class));
                 finish();
             }
         },2500);

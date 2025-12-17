@@ -1,4 +1,4 @@
-package com.pawansingh.vp.newthing;
+package com.pawansingh.vp.fragments;
 
 import android.database.Cursor;
 import android.net.Uri;

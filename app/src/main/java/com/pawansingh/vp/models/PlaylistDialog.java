@@ -58,34 +58,64 @@ public class PlaylistDialog extends BottomSheetDialogFragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(videoFilesAdapter);
         videoFilesAdapter.notifyDataSetChanged();
-
         return bottomSheetDialog;
     }
 
+//    private ArrayList<MediaFiles> fetchMedia(String folderName) {
+//
+//        ArrayList<MediaFiles> videoFiles = new ArrayList<>();
+//        Uri uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+//
+//        String selection = MediaStore.Video.Media.DATA+" like?";
+//        String[] selectionArg = new String[]{"%"+folderName+"%"};
+//        Cursor cursor = getContext().getContentResolver().query(uri,null,
+//                selection, selectionArg,null);
+//        if (cursor!=null && cursor.moveToNext()){
+//            do {
+//                String id = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media._ID));
+//                String title = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.TITLE));
+//                String displayName = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DISPLAY_NAME));
+//                String size = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.SIZE));
+//                String duration = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DURATION));
+//                String path = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA));
+//                String dateAdded = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATE_ADDED));
+//
+//                MediaFiles mediaFiles = new MediaFiles(id,title,displayName,size,duration,path, dateAdded);
+//                videoFiles.add(mediaFiles);
+//            }while (cursor.moveToNext());
+//        }
+//        return videoFiles;
+//    }
+
     private ArrayList<MediaFiles> fetchMedia(String folderName) {
-
         ArrayList<MediaFiles> videoFiles = new ArrayList<>();
+        Context ctx = getContext();
+        if (ctx == null) return videoFiles;
         Uri uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
+        String selection = MediaStore.Video.Media.DATA + " LIKE ?";
+        String[] selectionArg = new String[]{"%" + folderName + "%"};
 
-        String selection = MediaStore.Video.Media.DATA+" like?";
-        String[] selectionArg = new String[]{"%"+folderName+"%"};
-        Cursor cursor = getContext().getContentResolver().query(uri,null,
-                selection, selectionArg,null);
-        if (cursor!=null && cursor.moveToNext()){
-            do {
-                String id = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media._ID));
-                String title = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.TITLE));
-                String displayName = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DISPLAY_NAME));
-                String size = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.SIZE));
-                String duration = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DURATION));
-                String path = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA));
-                String dateAdded = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATE_ADDED));
+        Cursor cursor = ctx.getContentResolver()
+                .query(uri, null, selection, selectionArg, null);
+        if (cursor != null) {
+            try {
+                if (cursor.moveToFirst()) {
+                    do {
+                        String id = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media._ID));
+                        String title = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.TITLE));
+                        String displayName = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DISPLAY_NAME));
+                        String size = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.SIZE));
+                        String duration = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DURATION));
+                        String path = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA));
+                        String dateAdded = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATE_ADDED));
 
-                MediaFiles mediaFiles = new MediaFiles(id,title,displayName,size,duration,path, dateAdded);
-
-                videoFiles.add(mediaFiles);
-
-            }while (cursor.moveToNext());
+                        MediaFiles mediaFiles = new MediaFiles(id, title, displayName, size, duration, path, dateAdded);
+                        videoFiles.add(mediaFiles);
+                    } while (cursor.moveToNext());
+                }
+            } finally {
+                cursor.close();
+            }
         }
         return videoFiles;
     }

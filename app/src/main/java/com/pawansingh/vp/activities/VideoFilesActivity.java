@@ -32,10 +32,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.pawansingh.vp.R;
-import com.pawansingh.vp.adapters.VideoDeleteListener;
 import com.pawansingh.vp.adapters.VideoFilesAdapter;
+import com.pawansingh.vp.fragments.FoldersFragment;
 import com.pawansingh.vp.models.MediaFiles;
-import com.pawansingh.vp.newthing.FoldersFragment;
 import com.pawansingh.vp.newthing.MediaActionHandler;
 
 import java.util.ArrayList;
@@ -49,7 +48,6 @@ public class VideoFilesActivity extends AppCompatActivity implements SearchView.
 
     private MediaFiles videoToRename;
     private int renamePosition;
-
 
     public static final String MY_PREF = "my pref";
     RecyclerView recyclerView;
@@ -102,7 +100,6 @@ public class VideoFilesActivity extends AppCompatActivity implements SearchView.
             swipeRefreshLayout.setRefreshing(false);
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -116,7 +113,8 @@ public class VideoFilesActivity extends AppCompatActivity implements SearchView.
 
         recyclerView.setAdapter(videoFilesAdapter);
         videoFilesAdapter.notifyDataSetChanged();
-        videoFilesAdapter.setDeleteListener(new VideoDeleteListener() {
+
+        videoFilesAdapter.setOnVideoActionListener(new VideoFilesAdapter.OnVideoActionListener() {
             @Override
             public void onDeleteRequested(MediaFiles video, int position) {
                 Uri contentUri = ContentUris.withAppendedId(
@@ -150,6 +148,10 @@ public class VideoFilesActivity extends AppCompatActivity implements SearchView.
                         Toast.makeText(VideoFilesActivity.this, "Video not deleted", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+            @Override
+            public void onRenameRequested(MediaFiles video, int position, String currentName) {
+                prepareForRename(video, position, currentName);
             }
         });
     }
