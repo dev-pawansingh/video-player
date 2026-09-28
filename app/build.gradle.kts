@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.pawansingh.vp"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.pawansingh.vp"
         minSdk = 23
-        targetSdk = 36
-        versionCode = 13
-        versionName = "2.2"
+        targetSdk = 37
+        versionCode = 14
+        versionName = "2.3"
         multiDexEnabled = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -27,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding = true
@@ -37,17 +37,19 @@ android {
 
 dependencies {
 
-    implementation("androidx.appcompat:appcompat:1.7.1")
-    implementation("com.google.android.material:material:1.13.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation ("com.github.bumptech.glide:glide:5.0.5")
-    implementation ("com.google.android.exoplayer:exoplayer:2.14.1")
-    implementation("com.google.android.exoplayer:exoplayer-ui:2.14.1")
+    implementation("androidx.appcompat:appcompat:1.8.0")
+    implementation("com.google.android.material:material:1.14.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.2")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0")
+    implementation ("com.github.bumptech.glide:glide:5.0.9")
+    implementation("androidx.media3:media3-exoplayer:1.4.1")
+    implementation("androidx.media3:media3-ui:1.4.1")
+    implementation("androidx.media3:media3-datasource:1.4.1")
     implementation("androidx.multidex:multidex:2.0.1")
     implementation ("com.github.TutorialsAndroid:FilePicker:v9.0.1")
     implementation ("com.github.bullheadandplato:AndroidEqualizer:2.2")
-    implementation("androidx.activity:activity:1.11.0")
+    implementation("androidx.activity:activity:1.13.0")
+    implementation("androidx.core:core-ktx:1.19.0")
 
     //implementation ("com.google.android.gms:play-services-ads:23.0.0")
 

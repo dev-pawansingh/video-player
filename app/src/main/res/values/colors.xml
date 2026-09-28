@@ -23,5 +23,6 @@
     <color name="gray_500">#9E9E9E</color>
     <color name="gray_600">#757575</color>
     <color name="card_stroke">#1F000000</color>
+    <color name="error_message_background">#CC000000</color>
 
 </resources>

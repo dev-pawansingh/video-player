@@ -21,34 +21,38 @@
         app:elevation="2dp"
         android:outlineProvider="none"/>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+    <LinearLayout
+        android:id="@+id/tabLayoutContainer"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/toolbar"
-        android:background="#FFFFFF"
-        app:tabGravity="fill"
-        app:tabMode="fixed"
-        app:tabTextColor="#636E72"
-        app:tabSelectedTextColor="#0984E3"
-        app:tabIndicatorColor="#0984E3"
-        app:tabIndicatorHeight="3dp"
-        app:tabRippleColor="#E3F2FD"
-        app:tabPaddingStart="16dp"
-        app:tabPaddingEnd="16dp"/>
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/tab_container_bg"
+        android:padding="4dp">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/tabLayout"
-        android:background="#E0E6ED" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabTextColor="#636E72"
+            app:tabSelectedTextColor="#FFFFFF"
+            app:tabIndicator="@drawable/tab_indicator_pill"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="stretch"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabRippleColor="@android:color/transparent"/>
+    </LinearLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/view"
+        android:layout_below="@id/tabLayoutContainer"
         android:background="#F8FAFF" />
 
 </RelativeLayout>

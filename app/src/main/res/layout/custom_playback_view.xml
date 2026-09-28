@@ -19,7 +19,7 @@
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
-            android:background="#CD0F0F0F"
+            android:background="@drawable/gradient_top_scrim"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:visibility="visible">
@@ -112,14 +112,12 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true" />
 
-        <include layout="@layout/swipe_zoom_design" />
-
         <LinearLayout
             android:id="@+id/custom_controls_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@drawable/playback_icons_bg"
+            android:background="@drawable/gradient_bottom_scrim"
             android:orientation="vertical"
             android:paddingBottom="20dp"
             android:paddingVertical="8dp">
@@ -161,7 +159,7 @@
                     android:text="44:44"
                     android:textColor="@color/white" />
 
-                <com.google.android.exoplayer2.ui.DefaultTimeBar
+                <androidx.media3.ui.DefaultTimeBar
                     android:id="@+id/exo_progress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
